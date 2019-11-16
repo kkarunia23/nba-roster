@@ -96,7 +96,13 @@ players.get('/seed/newplayers', (req, res) => {
 
   const newplayers = [
     {
-
+      _id: "58e913abb7304c0e0f20d0d8",
+      name: "Beans",
+      description: "A small pile of beans. Buy more beans for a big pile of beans.",
+      img: "http://www.rodalesorganiclife.com/sites/rodalesorganiclife.com/files/styles/slideshow-desktop/public/navybeans_peangdao_1100.jpg?itok=QB7fl971",
+      price: 5,
+      qty: 99,
+      __v: 0
     }
   ];
 

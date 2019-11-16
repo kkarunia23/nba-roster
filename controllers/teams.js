@@ -5,7 +5,6 @@ const teams = express.Router();
 //Models
 //get access to the Team model
 const Team = require('../models/Teams');
-const Player = require('../models/Players');
 
 //Seed json Route
 teams.get('/json', (req, res) => {
@@ -39,13 +38,9 @@ teams.get('/new', (req, res) => {
 
 // Show   : GET    '/teams/:id'      2/7
 teams.get('/:id', (req, res) => {
-  Team.findById(req.params.id, (err, team) => {
-    Player.find({ tid: team.id }, (err, players) => {
-      res.render('./teams/show.ejs', {
-        team: team,
-        players: players
-      });
-    });
+  Team.findById(req.params.id, (err, Team) => {
+    if (err) { console.log(err); }
+    res.render('./teams/show.ejs', { Team: Team });
   });
 });
 
@@ -89,7 +84,13 @@ teams.get('/seed/newteams', (req, res) => {
 
   const newteams = [
     {
-
+      _id: "58e913abb7304c0e0f20d0d8",
+      name: "Beans",
+      description: "A small pile of beans. Buy more beans for a big pile of beans.",
+      img: "http://www.rodalesorganiclife.com/sites/rodalesorganiclife.com/files/styles/slideshow-desktop/public/navybeans_peangdao_1100.jpg?itok=QB7fl971",
+      price: 5,
+      qty: 99,
+      __v: 0
     }
   ];
 
@@ -119,4 +120,4 @@ teams.get('/dropdatabase/cannotundo/areyoursure/reallysure/okthen', (req, res) =
 //Module Exports - access this file in server.js
 //Export router AND require it in server.js Step 3/3
 //Note all three need to be working in order to get server runnning
-module.exports = teams;
+module.exports = teams; 
