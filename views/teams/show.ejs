@@ -15,14 +15,24 @@
   <div class="container">
     <h2></h2>
     <div class="jumbo">
-      <h3> <%= Team.name  %></h3>
-      <img src="<%= Team.imgURL %>" alt="An image of <%= Team.name %>" class="jumbo-img" />
-      <p><%=Team.description %></p>
+      <h3> <%= team.name  %></h3>
+      <img src="<%= team.imgURL %>" alt="An image of <%= team.name %>" class="jumbo-img" />
+      <p><%=team.description %></p>
+    </div>
+    <div class="jumbo">
+      <h3>Players</h3>
+      <% players.forEach( function (player) { %>
 
+      <div class="card">
+        <h5> <%= player.name  %></h5>
+        <a href="/players/<%=player.id%>">
+          <img src="<%= player.imgURL %>" alt="An image of <%= player.name %>" /></a>
+      </div>
+      <% }); %>
     </div>
     <div class="admin-actions">
-      <a href="/Teams/<%=Team.id%>/edit"><button type="button" name="button" class="edit-button">Edit</button></a>
-      <form action="/Teams/<%=Team.id%>?_method=DELETE" method="POST">
+      <a href="/Teams/<%=team.id%>/edit"><button type="button" name="button" class="edit-button">Edit</button></a>
+      <form action="/Teams/<%=team.id%>?_method=DELETE" method="POST">
         <button class="delete-button">DELETE</button>
       </form>
     </div>
