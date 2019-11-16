@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/skeleton.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/assets/logo.png">
+</head>
+
+<body>
+  <nav>
+
+  </nav>
+  <div class="container">
+    <h2></h2>
+    <div class="jumbo">
+      <h3> <%= Team.name  %></h3>
+      <img src="<%= Team.imgURL %>" alt="An image of <%= Team.name %>" class="jumbo-img" />
+      <p><%=Team.description %></p>
+
+    </div>
+    <div class="admin-actions">
+      <a href="/Teams/<%=Team.id%>/edit"><button type="button" name="button" class="edit-button">Edit</button></a>
+      <form action="/Teams/<%=Team.id%>?_method=DELETE" method="POST">
+        <button class="delete-button">DELETE</button>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

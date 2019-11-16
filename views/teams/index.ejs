@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Mongoose Store</title>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/skeleton.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/public/assets/logo.png">
+</head>
+
+<body>
+  <nav>
+    <div class="row nav">
+      <a href="/teams">
+        <h1 id="store" class="six columns">NBA 2019/2020</h1>
+      </a>
+      <span class="three columns">&nbsp;</span>
+      <a href="/teams/new"><button type="button" name="button" class="new-product three columns">New
+          Dynasty</button></a>
+      <a href="/players/"><button type="button" name="button" class="new-product three columns">Players
+          List</button></a>
+
+      <span class="one column">&nbsp;</span>
+    </div>
+  </nav>
+  <div class="container">
+    <h2></h2>
+    <div class="products">
+      <% teams.forEach( function (team) { %>
+      <div class="card">
+        <a href="/teams/<%=team.id%>">
+          <img src="<%= team.imgURL %>" alt="An image of <%= team.name %>" /></a>
+      </div>
+      <% }); %>
+    </div>
+  </div>
+</body>
+
+</html>

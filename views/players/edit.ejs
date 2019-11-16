@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/skeleton.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/assets/logo.png">
+</head>
+
+<body>
+  <nav>
+
+  </nav>
+  <div class="container">
+    <h2>Improve this item</h2>
+
+    <div class="jumbo">
+      <form class="edit" action="/Players/<%=Player.id%>?_method=PUT" method="POST">
+        <label for="name">Name: </label>
+        <input type="text" name="name" value="<%=Player.name%>">
+        <label for="img">Image: </label>
+        <input type="text" name="img" value="<%=Player.imgURL%>">
+        <label for="description">Description: </label>
+        <input type="textarea" name="description" value="<%=Player.description%>">
+        <input type="submit" name="submit" value="submit" class="edit-button">
+      </form>
+      <h5>Current image:</h5>
+      <img src="<%= Player.imgURL %>" alt="An image of <%= Player.name %>" />
+    </div>
+  </div>
+</body>
+
+</html>
