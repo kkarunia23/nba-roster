@@ -78,29 +78,6 @@ teams.delete('/:id', (req, res) => {
   });
 });
 
-
-//Seed Route - Vist ONCE to populate database
-teams.get('/seed/newteams', (req, res) => {
-
-  const newteams = [
-    {
-      _id: "58e913abb7304c0e0f20d0d8",
-      name: "Beans",
-      description: "A small pile of beans. Buy more beans for a big pile of beans.",
-      img: "http://www.rodalesorganiclife.com/sites/rodalesorganiclife.com/files/styles/slideshow-desktop/public/navybeans_peangdao_1100.jpg?itok=QB7fl971",
-      price: 5,
-      qty: 99,
-      __v: 0
-    }
-  ];
-
-  Team.create(newteams, (err, Team) => {
-    if (err) { console.log(err); }
-    console.log("SEED: NEW teams CREATED!");
-    res.redirect('/teams');
-  });
-});
-
 //ALTERNATE Seed Route - Vist ONCE to populate database
 const teamseeds = require('../models/seed.js');
 teams.get('/seed/newteams/viaseedfile', (req, res) => {
@@ -111,13 +88,7 @@ teams.get('/seed/newteams/viaseedfile', (req, res) => {
   });
 });
 
-//Mistakes happen! Drop Database - Vist ONCE to drop your database. WARNING! YOU CANNOT UNDO THIS!
-teams.get('/dropdatabase/cannotundo/areyoursure/reallysure/okthen', (req, res) => {
-  Team.collection.drop();
-  res.send('You did it! You dropped the database!');
-});
-
 //Module Exports - access this file in server.js
 //Export router AND require it in server.js Step 3/3
 //Note all three need to be working in order to get server runnning
-module.exports = teams; 
+module.exports = teams;

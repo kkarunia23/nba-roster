@@ -13,7 +13,7 @@
 
   </nav>
   <div class="container">
-    <h2>Improve this item</h2>
+    <h2>Improve this Legend</h2>
 
     <div class="jumbo">
       <form class="edit" action="/Players/<%=Player.id%>?_method=PUT" method="POST">
@@ -21,8 +21,10 @@
         <input type="text" name="name" value="<%=Player.name%>">
         <label for="img">Image: </label>
         <input type="text" name="img" value="<%=Player.imgURL%>">
-        <label for="description">Description: </label>
-        <input type="textarea" name="description" value="<%=Player.description%>">
+        <label for="pos">Position: </label>
+        <input type="text" name="pos" value="<%=Player.pos%>">
+        <label for="college">College: </label>
+        <input type="text" name="college" value="<%=Player.college%>">
         <input type="submit" name="submit" value="submit" class="edit-button">
       </form>
       <h5>Current image:</h5>

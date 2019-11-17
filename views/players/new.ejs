@@ -13,16 +13,21 @@
 
   </nav>
   <div class="container">
-    <h2>Add a new Dynasty</h2>
+
+    <h2>Add a new Hall-of-Famer</h2>
+
     <div class="jumbo">
+      </br>
+
       <form class="edit" action="/players" method="POST">
         <label for="name">Name: </label>
         <input type="text" name="name" value="" required>
         <label for="img">Image: </label>
         <input type="text" name="img" value="">
-        <label for="description">Description: </label>
-        <input type="textarea" name="description" value="">
-
+        <label for="pos">Position: </label>
+        <input type="text" name="pos" value="">
+        <label for="college">College: </label>
+        <input type="text" name="college" value="">
         <input type="submit" name="submit" value="submit" class="edit-button">
       </form>
     </div>

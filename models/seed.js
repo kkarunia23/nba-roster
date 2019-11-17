@@ -1,5 +1,5 @@
 module.exports = [
-     {
+ {
         tid: 5,
         name: "Kevin Love",
         ratings: [{ "hgt": 60, "stre": 70, "spd": 50, "jmp": 73, "endu": 62, "ins": 83, "dnk": 79, "ft": 72, "fg": 80, "tp": 74, "diq": 35, "oiq": 41, "drb": 51, "pss": 59, "reb": 89 }],
