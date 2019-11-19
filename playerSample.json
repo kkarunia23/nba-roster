@@ -1,0 +1,30 @@
+{
+    "_id": "5dd3eb3c2db8bfc0b412bf8a",
+    "__v": 0,
+    "tid": "0",
+    "name": "Kevin Love",
+    "pos": "FC",
+    "imgURL": "http://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/201567.png",
+    "college": "UCLA",
+    "team": "0"
+},
+{
+    "_id": "5dd3eb3c2db8bfc0b412bf8b",
+    "__v": 0,
+    "tid": "1",
+    "name": "Derrick Rose",
+    "pos": "PG",
+    "imgURL": "http://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/201565.png",
+    "college": "Memphis",
+    "team": "1"
+},
+{
+    "_id": "5dd3eb3c2db8bfc0b412bf8c",
+    "__v": 0,
+    "tid": "2",
+    "name": "Sam Dekker",
+    "pos": "SF",
+    "imgURL": "http://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/1626155.png",
+    "college": "Wisconsin",
+    "team": "2"
+}

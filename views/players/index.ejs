@@ -21,12 +21,14 @@
       <a href="/players/new"><button type="button" name="button" class="new-product three columns">New
           Hall-of-Famer</button></a>
       <a href="/teams/"><button type="button" name="button" class="new-product three columns">Dynasty</button></a>
-      <select>
-        <option value="">Team</option>
-        <optgroup label="Atlanta Hawks">
-
-        </optgroup>
-
+      <!-- Drop down here -->
+      <a href="/"><button type="button" name="button" class="new-product three columns">Choose Team</button></a>
+      <label for=“teams”>Choose Team</label>
+      <select name=“team” id=“team”>
+        <option value=“”>Choose Team</option>
+        <% for (let i=0; i< players.length; i++) { %>
+        <option value="<%= players[i].name %>"><%= players[i].name %></option>
+        <% } %>
       </select>
 
       <span class="one column">&nbsp;</span>

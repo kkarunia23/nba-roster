@@ -11,7 +11,8 @@ const playerSchema = new Schema({
         tid: String,
         imgURL: String,
         pos: String,
-        college: String
+        college: String,
+        team: { type: Schema.Types.ObjectId, ref: "Team" },
 });
 
 //Set up Model

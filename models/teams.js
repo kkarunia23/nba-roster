@@ -9,7 +9,8 @@ const teamSchema = new Schema({
                 required: [true, 'dynasty needs a name']
         },
         tid: String,
-        imgURL: String
+        imgURL: String,
+        player: [{ type: Schema.Types.ObjectId, ref: "Player" }]
 });
 
 //Set up Model

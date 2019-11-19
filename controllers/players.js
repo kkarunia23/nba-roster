@@ -24,11 +24,25 @@ players.get('/json', (req, res) => {
 // Delete : DELETE '/players/:id'      7/7
 
 // Index  : GET    '/players'          1/7
+// players.get('/', (req, res) => {
+//   Player.find({}, (err, players) => {
+//     if (err) { console.log(err); }
+//     res.render('./players/index.ejs', { players });
+//   });
+// });
+
 players.get('/', (req, res) => {
-  Player.find({}, (err, players) => {
-    if (err) { console.log(err); }
-    res.render('./players/index.ejs', { players });
-  });
+  Player.find()
+    .populate('team', 'name')
+    .exec((error, allPlayer) => {
+      if (error) console.error(err.message);
+      if (allPlayer) {
+        console.log(allPlayer);
+        res.render('players/index.ejs', {
+          players: allPlayer
+        });
+      };
+    });
 });
 
 // New    : GET    '/players/new'      3/7
@@ -40,6 +54,9 @@ players.get('/new', (req, res) => {
 // Show   : GET    '/players/:id'      2/7
 players.get('/:id', (req, res) => {
   Player.findById(req.params.id, (err, Player) => {
+
+    //team.find({tid:Player.tid}, )
+
     if (err) { console.log(err); }
     res.render('./players/show.ejs', { Player: Player });
   });

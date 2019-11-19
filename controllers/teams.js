@@ -5,6 +5,7 @@ const teams = express.Router();
 //Models
 //get access to the Team model
 const Team = require('../models/Teams');
+const Player = require('../models/players');
 
 //Seed json Route
 teams.get('/json', (req, res) => {
@@ -39,8 +40,11 @@ teams.get('/new', (req, res) => {
 // Show   : GET    '/teams/:id'      2/7
 teams.get('/:id', (req, res) => {
   Team.findById(req.params.id, (err, Team) => {
-    if (err) { console.log(err); }
-    res.render('./teams/show.ejs', { Team: Team });
+
+    Player.find({ tid: Team.tid }, (err, players) => {
+      if (err) { console.log(err); }
+      res.render('./teams/show.ejs', { Team: Team, players: players });
+    })
   });
 });
 
