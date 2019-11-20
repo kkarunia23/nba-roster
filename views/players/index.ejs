@@ -24,12 +24,15 @@
       <!-- Drop down here -->
       <a href="/"><button type="button" name="button" class="new-product three columns">Choose Team</button></a>
       <label for=“teams”>Choose Team</label>
-      <select name=“team” id=“team”>
-        <option value=“”>Choose Team</option>
-        <% for (let i=0; i< teams.length; i++) { %>
-        <option value="<%= teams[i].name %>"><%= teams[i].name %></option>
-        <% } %>
-      </select>
+      <form action="/players/" method="GET">
+        <select name="tid">
+          <option value=“”>Choose Team</option>
+          <% for (let i=0; i< teams.length; i++) { %>
+          <option value="<%= teams[i].tid %>"><%= teams[i].name %></option>
+          <% } %>
+        </select>
+        <input type="submit">
+      </form>
 
       <span class="one column">&nbsp;</span>
     </div>

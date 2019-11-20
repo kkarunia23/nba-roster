@@ -25,8 +25,22 @@ players.get('/json', (req, res) => {
 // Delete : DELETE '/players/:id'      7/7
 
 // Index  : GET    '/players'          1/7
+// players.get('/', (req, res) => {
+//   Player.find({}, (err, players) => {
+//     Team.find({}, (teamErr, teams) => {
+//       if (teamErr) { console.log(teamErr); }
+//       res.render('./players/index.ejs', {
+//         players,
+//         teams
+//       });
+//     })
+
+//   });
+// });
+
+// Get by tid
 players.get('/', (req, res) => {
-  Player.find({}, (err, players) => {
+  Player.find({ tid: req.query.tid }, (err, players) => {
     Team.find({}, (teamErr, teams) => {
       if (teamErr) { console.log(teamErr); }
       res.render('./players/index.ejs', {
