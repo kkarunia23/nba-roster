@@ -4,7 +4,7 @@ const teams = express.Router();
 
 //Models
 //get access to the Team model
-const Team = require('../models/Teams');
+const Team = require('../models/teams');
 const Player = require('../models/players');
 
 //Seed json Route
@@ -39,11 +39,16 @@ teams.get('/new', (req, res) => {
 
 // Show   : GET    '/teams/:id'      2/7
 teams.get('/:id', (req, res) => {
-  Team.findById(req.params.id, (err, Team) => {
 
-    Player.find({ tid: Team.tid }, (err, players) => {
+  // get team by id
+  Team.findById(req.params.id, (err, team) => {
+
+    // get players based on team id
+    Player.find({ tid: team.tid }, (err, players) => {
       if (err) { console.log(err); }
-      res.render('./teams/show.ejs', { Team: Team, players: players });
+
+      // render show view with team and players data
+      res.render('./teams/show.ejs', { team: team, players: players });
     })
   });
 });

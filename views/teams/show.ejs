@@ -13,19 +13,33 @@
 
   </nav>
   <div class="container">
+    <a href="/teams/"><button type="button" name="button" class="edit-button">BACK</button></a>
+
     <h2></h2>
     <div class="jumbo">
-      <h3> <%= Team.name  %></h3>
-      <img src="<%= Team.imgURL %>" alt="An image of <%= Team.name %>" class="jumbo-img" />
-
+      <h3> <%= team.name  %></h3>
+      <img src="<%= team.imgURL %>" alt="An image of <%= team.name %>" class="jumbo-img" />
     </div>
     <div class="admin-actions">
-      <a href="/Teams/<%=Team.id%>/edit"><button type="button" name="button" class="edit-button">Edit</button></a>
-      <form action="/Teams/<%=Team.id%>?_method=DELETE" method="POST">
+      <a href="/teams/<%=team.id%>/edit"><button type="button" name="button" class="edit-button">Edit</button></a>
+      <form action="/teams/<%=team.id%>?_method=DELETE" method="POST">
         <button class="delete-button">DELETE</button>
       </form>
     </div>
-  </div>
+
+    <div class="products">
+
+      <% players.forEach( function (player) { %>
+
+      <div class="card">
+        <h5> <%= player.name  %></h5>
+        <a href="/players/<%=player.id%>">
+          <img src="<%= player.imgURL %>" alt="An image of <%= player.name %>" /></a>
+      </div>
+      <% }); %>
+
+
+    </div>
 </body>
 
 </html>

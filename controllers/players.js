@@ -6,6 +6,7 @@ const players = express.Router();
 //Models
 //get access to the Player model
 const Player = require('../models/players');
+const Team = require('../models/teams');
 
 //See json Route
 players.get('/json', (req, res) => {
@@ -24,26 +25,35 @@ players.get('/json', (req, res) => {
 // Delete : DELETE '/players/:id'      7/7
 
 // Index  : GET    '/players'          1/7
-// players.get('/', (req, res) => {
-//   Player.find({}, (err, players) => {
-//     if (err) { console.log(err); }
-//     res.render('./players/index.ejs', { players });
+players.get('/', (req, res) => {
+  Player.find({}, (err, players) => {
+    Team.find({}, (teamErr, teams) => {
+      if (teamErr) { console.log(teamErr); }
+      res.render('./players/index.ejs', {
+        players,
+        teams
+      });
+    })
+
+  });
+});
+
+
+// Show   : GET    '/teams/:id'      2/7
+// teams.get('/:id', (req, res) => {
+
+//   // get team by id
+//   Team.findById(req.params.id, (err, team) => {
+
+//     // get players based on team id
+//     Player.find({ tid: team.tid }, (err, players) => {
+//       if (err) { console.log(err); }
+
+//       // render show view with team and players data
+//       res.render('./teams/show.ejs', { team: team, players: players });
+//     })
 //   });
 // });
-
-players.get('/', (req, res) => {
-  Player.find()
-    .populate('team', 'name')
-    .exec((error, allPlayer) => {
-      if (error) console.error(err.message);
-      if (allPlayer) {
-        console.log(allPlayer);
-        res.render('players/index.ejs', {
-          players: allPlayer
-        });
-      };
-    });
-});
 
 // New    : GET    '/players/new'      3/7
 // Order matters! must be above /prodcuts/:id or else this route will never get hit
@@ -54,13 +64,12 @@ players.get('/new', (req, res) => {
 // Show   : GET    '/players/:id'      2/7
 players.get('/:id', (req, res) => {
   Player.findById(req.params.id, (err, Player) => {
-
-    //team.find({tid:Player.tid}, )
-
     if (err) { console.log(err); }
     res.render('./players/show.ejs', { Player: Player });
   });
 });
+
+
 
 // Create : POST   '/players'          4/7
 players.post('/', (req, res) => {
