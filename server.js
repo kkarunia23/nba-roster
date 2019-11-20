@@ -45,7 +45,7 @@ app.use('/players', playersController);
 // Routes
 //localhost:3000  - this will reroute to `teams`
 app.get('/', (req, res) => {
-  res.redirect('/players  ');
+  res.redirect('/teams');
 });
 
 //Listener
