@@ -12,7 +12,10 @@ const PORT = process.env.PORT || 3000;
 //Database
 mongoURI = process.env.MONGOURI || 'mongodb://localhost/NBA-Roster'
 //connect to this database - don't forget to start `mongod`
-mongoose.connect(mongoURI);
+mongoose.connect(mongoURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 //set the connection to constiable for easy access`
 const db = mongoose.connection;
