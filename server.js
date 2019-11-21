@@ -10,7 +10,7 @@ require('dotenv').config();
 const PORT = process.env.PORT || 3000;
 
 //Database
-mongoURI = process.env.MONGOURI || 'mongodb://localhost/NBA-Roster'
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/NBA-Roster'
 //connect to this database - don't forget to start `mongod`
 mongoose.connect(mongoURI, {
   useNewUrlParser: true,
