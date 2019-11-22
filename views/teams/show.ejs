@@ -14,12 +14,11 @@
       <a href="/teams">
         <img src="/assets/nba2.png" class="two columns">
       </a>
-      <div class="admin-actions">
-        <a href="/teams/<%=team.id%>/edit"><button type="button" name="button" class="edit-button">Edit</button></a>
-        <form action="/teams/<%=team.id%>?_method=DELETE" method="POST">
-          <button class="delete-button">DELETE</button>
-        </form>
-      </div>
+
+      <a href="/teams/<%=team.id%>/edit"><button type="button" name="button" class="edit-button">Edit</button></a>
+      <form action="/teams/<%=team.id%>?_method=DELETE" method="POST">
+        <button class="delete-button">DELETE</button>
+      </form>
   </nav>
   <div class="container">
     </br>
