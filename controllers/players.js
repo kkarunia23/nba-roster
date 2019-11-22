@@ -24,20 +24,6 @@ players.get('/json', (req, res) => {
 // Update : PUT    '/players/:id'      6/7
 // Delete : DELETE '/players/:id'      7/7
 
-// Index  : GET    '/players'          1/7
-// players.get('/', (req, res) => {
-//   Player.find({}, (err, players) => {
-//     Team.find({}, (teamErr, teams) => {
-//       if (teamErr) { console.log(teamErr); }
-//       res.render('./players/index.ejs', {
-//         players,
-//         teams
-//       });
-//     })
-
-//   });
-// });
-
 // Get by tid
 players.get('/', (req, res) => {
   Player.find({ tid: req.query.tid }, (err, players) => {
@@ -52,23 +38,6 @@ players.get('/', (req, res) => {
   });
 });
 
-
-// Show   : GET    '/teams/:id'      2/7
-// teams.get('/:id', (req, res) => {
-
-//   // get team by id
-//   Team.findById(req.params.id, (err, team) => {
-
-//     // get players based on team id
-//     Player.find({ tid: team.tid }, (err, players) => {
-//       if (err) { console.log(err); }
-
-//       // render show view with team and players data
-//       res.render('./teams/show.ejs', { team: team, players: players });
-//     })
-//   });
-// });
-
 // New    : GET    '/players/new'      3/7
 // Order matters! must be above /prodcuts/:id or else this route will never get hit
 players.get('/new', (req, res) => {
@@ -82,8 +51,6 @@ players.get('/:id', (req, res) => {
     res.render('./players/show.ejs', { Player: Player });
   });
 });
-
-
 
 // Create : POST   '/players'          4/7
 players.post('/', (req, res) => {

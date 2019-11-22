@@ -7,37 +7,32 @@
   <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/skeleton.css">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="icon" href="/public/assets/logo.png">
+  <link rel="icon" href="/assets/logo.png">
 </head>
 
 <body>
   <nav>
-    </br>
-    <div class="row nav">
-      <a href="/players">
-        <h1 id="store" class="six columns">NBA 2019/2020</h1>
+    <div class="nav">
+      <a href="/teams">
+        <h1 class="six columns">NBA 2019/2020</h1>
       </a>
-      <span class="three columns">&nbsp;</span>
-      <a href="/players/new"><button type="button" name="button" class="new-product three columns">New
-          Hall-of-Famer</button></a>
-      <a href="/teams/"><button type="button" name="button" class="new-product three columns">Dynasty</button></a>
-      <!-- Drop down here -->
-      <form action="/players/" method="GET">
-        <select name="tid">
-          <option value=“”>Choose Team</option>
-          <% for (let i=0; i< teams.length; i++) { %>
-          <option value="<%= teams[i].tid %>"><%= teams[i].name %></option>
-          <% } %>
-        </select>
-        <input type="submit">
-      </form>
 
-      <span class="one column">&nbsp;</span>
+      <a href="/players/new"><button type="button" name="button" class="edit-button">New
+          Hall-of-Famer</button></a> <!-- Drop down here -->
     </div>
   </nav>
-  <div class="container">
+  <div class="col-5  columns">
     <h2></br></h2>
+    <form action="/players/" method="GET">
+      <select name="tid">
+        <option value="">Choose Team</option>
 
+        <% for (let i=0; i< teams.length; i++) { %>
+        <option value="<%= teams[i].tid %>"><%= teams[i].name %></option>
+        <% } %>
+      </select>
+      <input type="submit">
+    </form>
     <div class="products">
 
       <% players.forEach( function (player) { %>
@@ -50,6 +45,7 @@
       <% }); %>
     </div>
   </div>
+  <%=teams.name%>
 </body>
 
 </html>

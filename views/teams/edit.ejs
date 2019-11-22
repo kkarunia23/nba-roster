@@ -10,10 +10,13 @@
 
 <body>
   <nav>
-
+    <div class="nav">
+      <a href="/teams">
+        <h1 class="six columns">NBA 2019/2020</h1>
+      </a>
   </nav>
   <div class="container">
-    <h2>Improve this Dynasty</h2>
+    <h2></br>Improve this Dynasty</h2>
 
     <div class="jumbo">
       <form class="edit" action="/Teams/<%=Team.id%>?_method=PUT" method="POST">
@@ -21,7 +24,7 @@
         <input type="text" name="name" value="<%=Team.name%>">
         <label for="img">Image: </label>
         <input type="text" name="img" value="<%=Team.imgURL%>">
-        <input type="submit" name="submit" value="submit" class="edit-button">
+        <input type="submit" name="submit" value="submit" class="buy-button">
       </form>
       <h5>Current image:</h5>
       <img src="<%= Team.imgURL %>" alt="An image of <%= Team.name %>" />

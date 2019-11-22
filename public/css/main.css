@@ -1,7 +1,10 @@
 /** {
   border: 1px solid gold;
 }*/
+body{
+  font-family: 'Coming Soon', cursive;
 
+}
 h1 {
   display: inline-block;
   color: #ADEAED;
@@ -26,8 +29,9 @@ text-shadow: 1px 1px 2px #F5B8D9;
 
 .new-product {
   background-color: #F5B8D9;
-  margin-top: 1em;
+  margin-top: 50px;
   text-align: center;
+  margin-left:200px;
 }
 
 h2  {
@@ -46,6 +50,11 @@ h2  {
   border-radius: 10px;
   background-color: #FFF5EC;
   min-height:150px;
+}
+
+.col-5 columns{
+      width: 16.3333333333%;
+    padding-right: 10px;
 }
 
 img {
@@ -83,10 +92,12 @@ p {
 .delete-button {
   background-color: #EEA2CC;
   margin-left: 1em;
+    margin-top:50px;
 }
 
 .edit-button {
   background-color: #D5F695;
+  margin-top:50px;
 }
 
 .admin-actions {

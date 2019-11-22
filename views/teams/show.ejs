@@ -10,22 +10,24 @@
 
 <body>
   <nav>
-
+    <div class="nav">
+      <a href="/teams">
+        <h1 class="six columns">NBA 2019/2020</h1>
+      </a>
+      <div class="admin-actions">
+        <a href="/teams/<%=team.id%>/edit"><button type="button" name="button" class="edit-button">Edit</button></a>
+        <form action="/teams/<%=team.id%>?_method=DELETE" method="POST">
+          <button class="delete-button">DELETE</button>
+        </form>
+      </div>
   </nav>
   <div class="container">
-    <a href="/teams/"><button type="button" name="button" class="edit-button">BACK</button></a>
 
-    <h2></h2>
+    <h2></br></h2>
     <div class="jumbo">
-      <h3> <%= team.name  %></h3>
       <img src="<%= team.imgURL %>" alt="An image of <%= team.name %>" class="jumbo-img" />
     </div>
-    <div class="admin-actions">
-      <a href="/teams/<%=team.id%>/edit"><button type="button" name="button" class="edit-button">Edit</button></a>
-      <form action="/teams/<%=team.id%>?_method=DELETE" method="POST">
-        <button class="delete-button">DELETE</button>
-      </form>
-    </div>
+
 
     <div class="products">
 
@@ -37,8 +39,6 @@
           <img src="<%= player.imgURL %>" alt="An image of <%= player.name %>" /></a>
       </div>
       <% }); %>
-
-
     </div>
 </body>
 

@@ -7,46 +7,49 @@
   <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/skeleton.css">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="icon" href="/public/assets/logo.png">
+  <link rel="icon" href="/assets/logo.png">
+  <link href="https://fonts.googleapis.com/css?family=Coming+Soon&display=swap" rel="stylesheet">
+  <!-- Import Google Icon Font
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  Import materialize.css
+  <link type="text/css" rel="stylesheet" href="/css/materialize.min.css" media="screen,projection" /> -->
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
-  </br>
 
   <nav>
-    <div class="row nav">
+    <div class="nav">
       <a href="/teams">
-        <h1 id="store" class="six columns">NBA 2019/2020</h1>
+        <h1 class="six columns">NBA 2019/2020</h1>
       </a>
-      <span class="three columns">&nbsp;</span>
-      <a href="/teams/new"><button type="button" name="button" class="new-product three columns">New
+      <!-- <span class="two columns"></span> -->
+      <a href="/teams/new"><button type="button" name="button" class="edit-button">New
           Dynasty</button></a>
-      <a href="/players/"><button type="button" name="button" class="new-product three columns">Players
-          List</button></a>
 
-      <span class="one column">&nbsp;</span>
+      <a href="/players/"><button type="button" name="button" class="edit-button">Players
+          List</button></a>
     </div>
   </nav>
+
   <!-- Drop down here -->
-  <label for=teams>Choose teams</label>
-  <select name=teams id=teams>
-    <option value=“”>Choose teams</option>
+  <div class="col-5 columns">
 
-    <option value=“test“></option>
-
-  </select></br>
-
-  <div class="container">
-    <h2></h2>
+    <h2></br></h2>
     <div class="products">
       <% teams.forEach( function (team) { %>
       <div class="card">
         <a href="/teams/<%=team.id%>">
           <img src="<%= team.imgURL %>" alt="An image of <%= team.name %>" /></a>
+
       </div>
       <% }); %>
     </div>
   </div>
+  <!--JavaScript at end of body for optimized loading-->
+  <!-- <script type="text/javascript" src="/js/materialize.min.js"></script> -->
 </body>
 
 </html>
