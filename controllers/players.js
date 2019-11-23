@@ -33,8 +33,11 @@ players.get('/', (req, res) => {
         players,
         teams
       });
+      res.render('./players/show.ejs', {
+        players,
+        teams
+      });
     })
-
   });
 });
 
